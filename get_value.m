@@ -4,3 +4,9 @@ if nargin == 3
 end
 val = weight'*abs(x);
 end
+
+function [weight] = get_weight(x,k,w)
+[~, index] = sort(abs(x),'descend');
+weight = ones(length(x),1);
+weight(index(1:k)) = w*ones(k,1);
+end

@@ -38,7 +38,7 @@ maxIter = 15;
 [M,N] = size(Phi);
 
 if nargin < 5     detect =1;  end
-if nargin == 4  || isempty(x_init)    x_init = initial_point(Phi, Y);  end
+if nargin <= 4  || isempty(x_init)    x_init = initial_point(Phi, Y);  end
 if nargin < 6 && ~detect     k =norm0(x_init);  end
 
 opts.tol = 1e-2;
